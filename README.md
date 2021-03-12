@@ -20,7 +20,9 @@
 
 
 
+
 ### Executar dynamo: 
+
 
  na pasta em que o jar está baixado: java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
  
@@ -30,15 +32,24 @@ para listar as tabelas criadas:  aws dynamodb list-tables --endpoint-url http://
 documentacao gerada pela aplicação: swagger: http://localhost:8080/swagger-ui-heroes-reactive-api.html
 
 
+
 ### Link Postman Canary Projeto:
+
+
 
 https://documenter.getpostman.com/view/14923100/Tz5p6y4m 
 
-Linguagem cURL
+Linguagem cURL.
+
+Mostrando todos os heŕois:
 
 curl --location --request GET 'http://localhost:8080/heroes'
 
+Selecionando heróis por ID:
+
 curl --location --request GET 'http://localhost:8080/heroes/7'
+
+Inserindo novos heróis:
 
 curl --location --request POST 'http://localhost:8080/heroes' \
 --data-raw '{
@@ -47,5 +58,7 @@ curl --location --request POST 'http://localhost:8080/heroes' \
         "universe": "marvel",
         "films": 16
 }'
+
+Removendo heróis:
 
 curl --location --request DELETE 'http://localhost:8080/heroes/4'
